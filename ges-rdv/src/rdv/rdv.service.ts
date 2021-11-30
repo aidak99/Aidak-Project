@@ -7,8 +7,11 @@ export class RdvService {
             ,date: '2020-03-05', numeroDossier: '23thgf',heure: '11h25'},
             {id: 2,nomMedecin: 'Dr Ndiaye', nomPatient: 'Mbodji', prenomPatient: 'ibrahima'
             ,date: '2021-11-05', numeroDossier: '4830OP',heure: '11h25'},
-            {id: 3,nomMedecin: 'Dr Monnepaquet', nomPatient: 'janot', prenomPatient: 'jean'
+            {id: 3,nomMedecin: 'Dr Leriche', nomPatient: 'Seck', prenomPatient: 'Mama'
             ,date: '2020-12-05', numeroDossier: '23850N',heure: '11h25'},
+            {id: 4,nomMedecin: 'Dr Kombo', nomPatient: 'Sall', prenomPatient: 'Awa'
+            ,date: '2020-12-05', numeroDossier: '23850N',heure: '11h25'},
+           
         ];
     rdvList(): Rdv[] {
         return this.rdvs;
