@@ -11,6 +11,11 @@ export class RdvService {
             ,date: '2020-12-05', numeroDossier: '23850N',heure: '11h25'},
             {id: 4,nomMedecin: 'Dr Kombo', nomPatient: 'Sall', prenomPatient: 'Awa'
             ,date: '2020-12-05', numeroDossier: '23850N',heure: '11h25'},
+            {id: 5,nomMedecin: 'Dr Diagne ', nomPatient: 'Faye', prenomPatient: 'Astrid'
+            ,date: '2020-12-05', numeroDossier: '23850N',heure: '11h25'},
+            {id: 6,nomMedecin: 'Dr Doye', nomPatient: 'Lecoeur', prenomPatient: 'Pascaline'
+            ,date: '2020-12-05', numeroDossier: '23850N',heure: '11h25'},
+            
            
         ];
     rdvList(): Rdv[] {
