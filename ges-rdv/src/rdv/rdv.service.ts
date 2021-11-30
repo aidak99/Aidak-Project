@@ -1,0 +1,62 @@
+import { Injectable } from '@nestjs/common';
+import { Rdv } from '../entities/rdv';
+@Injectable()
+export class RdvService {
+    rdvs: Rdv[] = [
+            {id: 1,nomMedecin: 'Dr Sullivan', nomPatient: 'Diagne', prenomPatient: 'aida'
+            ,date: '2020-03-05', numeroDossier: '23thgf',heure: '11h25'},
+            {id: 2,nomMedecin: 'Dr Ndiaye', nomPatient: 'Mbodji', prenomPatient: 'ibrahima'
+            ,date: '2021-11-05', numeroDossier: '4830OP',heure: '11h25'},
+            {id: 3,nomMedecin: 'Dr Monnepaquet', nomPatient: 'janot', prenomPatient: 'jean'
+            ,date: '2020-12-05', numeroDossier: '23850N',heure: '11h25'},
+        ];
+    rdvList(): Rdv[] {
+        return this.rdvs;
+    }
+
+    create(rdv: Rdv){
+        this.rdvs = [...this.rdvs,rdv];
+
+    }
+
+    findOne(id: string){
+        return this.rdvs.find(rdv => rdv.id === Number(id));
+    }
+    update(id: string, rdv: Rdv){
+        const rdvToUpdate = this.rdvs.find(rdv => rdv.id === Number(id));
+        if(!rdvToUpdate){
+            return new NotFoundException("introuvable rdv");
+        }
+        if(rdv.nomMedecin){
+            rdvToUpdate.nomMedecin = rdv.nomMedecin;
+        } if(rdv.nomPatient){
+            rdvToUpdate.nomPatient = rdv.nomPatient;
+        }
+         if(rdv.prenomPatient){
+            rdvToUpdate.prenomPatient = rdv.prenomPatient;
+        }
+         if(rdv.date){
+            rdvToUpdate.date = rdv.date;
+        }
+         if(rdv.numeroDossier){
+            rdvToUpdate.numeroDossier = rdv.numeroDossier;
+        }
+        if(rdv.heure){
+            rdvToUpdate.heure = rdv.heure;
+        }
+        const updatedRdv = this.rdvs.map(rdv => rdv.id !== +id ? rdv : rdvToUpdate);
+        this.rdvs = [...updatedRdv];
+        return{updatedrdv: 1, rdv: updatedRdv};
+    }
+
+    delete(id: string){
+        const nbRdvBefore = this.rdvs.length;
+        this.rdvs = [...this.rdvs.filter(rdv => rdv.id !== +id)];
+        if(this.rdvs.length < nbRdvBefore){
+            return{deletedrdv: 1, nbRdvs: this.rdvs.length}
+        } else
+        {
+            return{deletedrdv: 0, nbRdvs: this.rdvs.length}
+        }
+    }
+}
