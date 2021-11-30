@@ -27,6 +27,10 @@ export class RdvService {
             ,date: '2020-12-05', numeroDossier: '23850N',heure: '11h25'},
             {id: 12,nomMedecin: 'Dr Taraj', nomPatient: 'Heure', prenomPatient: 'Dixons'
             ,date: '2020-12-05', numeroDossier: '23850N',heure: '11h25'},
+            {id: 13,nomMedecin: 'Dr Saveur', nomPatient: 'Edouard', prenomPatient: 'Liam'
+            ,date: '2020-12-05', numeroDossier: '23850N',heure: '11h25'},
+            {id: 14,nomMedecin: 'Dr Olivier', nomPatient: 'Adam', prenomPatient: 'Livia'
+            ,date: '2020-12-05', numeroDossier: '23850N',heure: '11h25'},
 
             
             
