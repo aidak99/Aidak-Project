@@ -12,7 +12,7 @@ export class RdvController {
 
     @Get(':id')
     findOne(@Param('id') id: string){
-
+        return this.rdvService.findOne(id);
     }
 
     @Post()
@@ -20,7 +20,7 @@ export class RdvController {
         this.rdvService.create(newRdv);
     }
     @Patch(':id')
-    updateRdv(@Param('id') id: string @Body() rd: Rdv){
+    updateRdv(@Param('id') id: string, @Body() rd: Rdv){
         return this.rdvService.update(id, rd);
     }
     @Delete(':id')

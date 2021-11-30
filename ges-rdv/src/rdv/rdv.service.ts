@@ -1,5 +1,6 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { Rdv } from '../entities/rdv';
+
 @Injectable()
 export class RdvService {
     rdvs: Rdv[] = [
@@ -76,7 +77,7 @@ export class RdvService {
         }
         const updatedRdv = this.rdvs.map(rdv => rdv.id !== +id ? rdv : rdvToUpdate);
         this.rdvs = [...updatedRdv];
-        return{updatedrdv: 1, rdv: updatedRdv};
+        return{updatedrdv: 1, rdv: rdvToUpdate};
     }
 
     delete(id: string){
